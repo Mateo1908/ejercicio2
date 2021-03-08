@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 2</title>
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<script>
+		x=[];
+	</script>
+</head>
+<body>
+	<center>
+		<input type="text" placeholder="Ingresa numeros" id="si">
+		<input type="button" value="Ingresar" onclick="ingresar();">
+		<br><br>
+		<button onclick="max();">Mire maximo</button>
+	</center>
+	<div id="r"></div>
+	<script>
+		function ingresar()
+		{
+			x[x.length]=document.getElementById("si").value;
+			console.log(x);
+			console.log(x.length);
+			document.getElementById("si").value="";
+			if(x.length>5)
+			{
+				alert("Usuario, no se pueden ingresar mas numeros");
+				x.pop();
+				console.log(x);
+				console.log(x.length);
+			}
+		}
+
+		function max()
+		{
+			y=Math.max(...x);
+			document.getElementById("r").innerHTML=y;
+		}
+	</script>
+</body>
+</html>
